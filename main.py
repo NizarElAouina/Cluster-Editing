@@ -5,9 +5,9 @@ Created on Fri Feb 24 10:19:35 2023
 """
 import FunctionsCluster as cl
 import numpy as np
+import networkx as nx
 
-
-graph = open("C:/Users/nizar/Desktop/wiss/heur/heur001.gr", 'r')
+graph = open("C:/Users/nizar/Desktop/wiss/heur/heur003.gr", 'r')
 p,cep,n_vertices, n_edges=graph.readline().split()    #get first line of data in variables
 adjacency_matrix = [[0] * int(n_vertices) for _ in range(int(n_vertices))]  #Declare a n_edges dimension matrix full of zeros 
 for line in graph:     #Traverse the matrix
@@ -17,4 +17,32 @@ for line in graph:     #Traverse the matrix
 #print(adjacency_matrix)
 a=np.matrix(adjacency_matrix)        #W
 b=np.tril(a)
-cl.make_cluster(b,"C:/Users/nizar/Desktop/S2/IA/Clustering/cluster1")
+cl.make_cluster(b,"C:/Users/nizar/Desktop/S2/IA/Clustering/cluster3")
+"""
+G = nx.Graph()
+l = []
+graph = open("C:/Users/nizar/Desktop/S2/IA/Clustering/cluster3", 'r')
+for line in graph:     #Traverse the matrix
+    u, v = map(int, line.split())    #Split the line into two variables since we have 2 integers
+    if u not in l: 
+        l.append(u)
+    if v not in l:
+        l.append(v)
+    G.add_edge(u, v)
+
+G.add_nodes_from(l)
+
+
+
+nx.draw(G)  
+
+"""
+
+
+
+
+
+
+
+
+    
