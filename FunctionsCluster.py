@@ -138,22 +138,19 @@ def set_triangular_rows_to_zero(matrix, row_indexes):
 
 def make_cluster(matrix,filename):
     result, sizes = find_squares(matrix)
-    i=1
-    while result : 
-        x_result = extract_first_elements_x(result)
-        y_result = extract_first_elements_y(result)
-        biggest = index_of_biggest_value(sizes)
-        elements_of_combination = get_element_combination(biggest,x_result,y_result)
-        numbers = get_numbers_between_tuples(elements_of_combination)
-        combo = get_combinations(numbers)
-        write_tuples_to_file(combo,filename)
-        matrix = set_triangular_rows_to_zero(matrix, numbers)
-        result,sizes = find_squares(matrix)
-        print("iteration",i)
-        i+=1
+    x_result = extract_first_elements_x(result)
+    y_result = extract_first_elements_y(result)
+    biggest = index_of_biggest_value(sizes)
+    elements_of_combination = get_element_combination(biggest,x_result,y_result)
+    numbers = get_numbers_between_tuples(elements_of_combination)
+    combo = get_combinations(numbers)
+    write_tuples_to_file(combo,filename)
+    matrix = set_triangular_rows_to_zero(matrix, numbers)
+    result,sizes = find_squares(matrix)
+    if result:
+        return make_cluster(matrix, filename)
     else : 
         print("Done")
-
 
 
 
