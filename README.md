@@ -9,4 +9,13 @@ The graph.gr file is an example of the input file.<br>
 Finally, here is an example of a graph : <br><br>
 ![alt text](https://github.com/NizarElAouina/Cluster-Editing/blob/main/before.png)<br>
 And after the execution of the algorithm :<br><br>
-![alt text](https://github.com/NizarElAouina/Cluster-Editing/blob/main/after.png)
+![alt text](https://github.com/NizarElAouina/Cluster-Editing/blob/main/after.png) <br>
+
+This is the result on a graph with 200 nodes and 6731 edges : <br>
+![alt text](https://github.com/NizarElAouina/Cluster-Editing/blob/main/image.png) 
+
+
+
+
+
+
