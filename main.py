@@ -21,7 +21,7 @@ cl.make_cluster(b,"C:/Users/nizar/Desktop/S2/IA/Clustering/cluster7")
 """
 G = nx.Graph()
 l = []
-graph = open("C:/Users/nizar/Desktop/S2/IA/Clustering/cluster7", 'r')
+graph = open("C:/Users/nizar/Desktop/S2/IA/Clustering/cluster2", 'r')
 for line in graph:     #Traverse the matrix
     u, v = map(int, line.split())    #Split the line into two variables since we have 2 integers
     if u not in l: 

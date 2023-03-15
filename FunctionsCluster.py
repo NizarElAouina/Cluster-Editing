@@ -136,6 +136,12 @@ def set_triangular_rows_to_zero(matrix, row_indexes):
         matrix[i, :i] = 0
     return matrix
 
+def set_triangular_col_to_zero(matrix, row_indexes):
+    for i in row_indexes:
+        #matrix[i, :i] = 0
+        matrix[:, i] = 0
+    return matrix
+
 def make_cluster(matrix,filename):
     result, sizes = find_squares(matrix)
     x_result = extract_first_elements_x(result)
@@ -146,11 +152,13 @@ def make_cluster(matrix,filename):
     combo = get_combinations(numbers)
     write_tuples_to_file(combo,filename)
     matrix = set_triangular_rows_to_zero(matrix, numbers)
+    matrix = set_triangular_col_to_zero(matrix, numbers)
     result,sizes = find_squares(matrix)
     if result:
         return make_cluster(matrix, filename)
     else : 
         print("Done")
+        
 
 
 
